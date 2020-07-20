@@ -1,0 +1,29 @@
+<div>
+    <div class="jumbotron">
+    <h1 class="display-4">Bem-vindo ao Blog</h1>
+    <p class="lead">Sinta-se a vontade para navegar e explorar os conteúdos do Blog. Seja prudente em suas ações!</p>
+    <hr class="my-4">
+    <p>Seja um colaborador do Blog, participe e compartilhe coisas.</p>
+    <a class="btn btn-primary btn-lg" href="/user/register" role="button">Criar sua conta</a>
+    </div>
+
+    <hr>
+    <center><h2>Postagens mais recentes</h2></center>
+
+    {{#each posts}}
+        <div class="card mt-4">
+            <div class="card-header">
+                {{this.title}}
+            </div>
+            <div class="card-body">
+                <p>{{this.description}}</p>
+                <a href="/post/{{this.slug}}"><button class="btn btn-success btn-edit">Leia mais</button></a>
+                <hr>
+                <small>Categoria: {{this.category.name}}</small><br>
+                <small class="card-text">Data de postagem: {{#formatDate this.date}}{{/formatDate}}</small>
+            </div>
+        </div>
+    {{else}}
+        <center><h3>Ainda não foi cadastrada nenhuma postagem!</h3></center>
+    {{/each}}
+</div>

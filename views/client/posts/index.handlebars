@@ -1,0 +1,19 @@
+<div>
+    <center><h2>Postagens de {{categorys.name}}</h2></center>
+
+    {{#each posts}}
+        <div class="card mt-4">
+            <div class="card-header">
+                {{this.title}}
+            </div>
+            <div class="card-body">
+                <p>{{this.description}}</p>
+                <a href="/post/{{this.slug}}"><button class="btn btn-success btn-edit">Leia mais</button></a>
+                <hr>
+                <small class="card-text">Data de postagem: {{#formatDate this.date}}{{/formatDate}}</small>
+            </div>
+        </div>
+    {{else}}
+        <center><h3>Ainda não foi cadastrada nenhuma postagem!</h3></center>
+    {{/each}}
+</div>

@@ -1,0 +1,44 @@
+<div>
+    {{#each errors}}
+        <div class="alert alert-danger" role="alert">
+            {{text}}
+        </div>
+    {{else}}
+
+    {{/each}}
+    <center><h2>Atualização das postagens</h2></center>
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/posts/update" method="post">
+                <input type="hidden" name="id" id="id" value="{{this.post._id}}">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" value="{{this.post.title}}" placeholder="Digite o título para essa nova postagem" required>
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug:</label>
+                    <input type="text" class="form-control" id="slug" name="slug" aria-describedby="emailHelp" value="{{this.post.slug}}" placeholder="Digite o slug para essa nova postagem"  required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp" value="{{this.post.description}}" placeholder="Digite a descrição para essa nova postagem"  required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea class="form-control" id="content" name="content" rows="3" placeholder="Digite o conteúdo para essa nova postagem"  required>{{this.post.content}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Selecione a categoria da postagem:</label>
+                    <select class="form-control" id="category" name="category" required>
+                        {{#each categorys}}
+                            <option value="{{this._id}}">{{this.name}}</option>
+                        {{else}}
+                            <option value="0">Não há categorias cadastradas</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-edit">Atualizar postagem</button>
+            </form>
+        </div>
+    </div>
+</div>

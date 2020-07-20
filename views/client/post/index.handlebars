@@ -1,0 +1,12 @@
+<div>
+    <div class="card mt-4">
+        <div class="card-header">
+            {{post.title}}
+        </div>
+        <div class="card-body">
+            <p>{{post.content}}</p>
+            <hr>
+            <small class="card-text">Data de postagem: {{#formatDate this.date}}{{/formatDate}}</small>
+        </div>
+    </div>
+</div>

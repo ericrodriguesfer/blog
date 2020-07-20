@@ -1,0 +1,43 @@
+<div>
+    {{#each errors}}
+        <div class="alert alert-danger" role="alert">
+            {{text}}
+        </div>
+    {{else}}
+
+    {{/each}}
+    <center><h2>Cadastro de novas postagens</h2></center>
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/posts/register/new" method="post">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Digite o título para essa nova postagem" required>
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug:</label>
+                    <input type="text" class="form-control" id="slug" name="slug" aria-describedby="emailHelp" placeholder="Digite o slug para essa nova postagem"  required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp" placeholder="Digite a descrição para essa nova postagem"  required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea class="form-control" id="content" name="content" rows="3" placeholder="Digite o conteúdo para essa nova postagem"  required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Selecione a categoria da postagem:</label>
+                    <select class="form-control" id="category" name="category" required>
+                        {{#each categorys}}
+                            <option value="{{this._id}}">{{this.name}}</option>
+                        {{else}}
+                            <option value="0">Não há categorias cadastradas</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-edit">Cadastrar categoria</button>
+            </form>
+        </div>
+    </div>
+</div>

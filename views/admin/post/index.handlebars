@@ -1,0 +1,29 @@
+<div>
+    <center><h2>Lista de postagens</h2></center>
+    <hr>
+    <a href="/admin/posts/register">
+        <button class="btn btn-success btn-edit">Adicione uma nova postagem</button>
+    </a>
+
+    {{#each posts}}
+        <div class="card mt-4">
+            <div class="card-header">
+                {{this.title}}
+            </div>
+            <div class="card-body">
+                <p>Descrição: <i>{{this.description}}</i></p>
+                <hr>
+                <p>Categoria: {{this.category.name}}</p>
+                <hr>
+                <p class="card-text">Data de postagem: {{#formatDate this.date}}{{/formatDate}}</p>
+                <a href="/admin/posts/edit/{{this._id}}"><button class="btn btn-primary btn-edit">Editar postagem</button></a>
+                <form action="/admin/posts/delete" method="post">
+                    <input type="hidden" name="id" id="id" value="{{this._id}}">
+                    <button type="submit" class="btn btn-danger mt-1 btn-edit">Apagar postagem</button>
+                </form>
+            </div>
+        </div>
+    {{else}}
+        <center><h3>Ainda não foi cadastrada nenhuma postagem!</h3></center>
+    {{/each}}
+</div>

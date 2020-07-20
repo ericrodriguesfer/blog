@@ -1,0 +1,34 @@
+<div>
+    {{#each error}}
+        <div class="alert alert-danger" role="alert">
+            {{text}}
+        </div>
+    {{else}}
+
+    {{/each}}
+    <center><h2>Cadastro de usuários</h2></center>
+
+    <div class="card">
+        <div class="card-body">
+            <form action="/user/register" method="post">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Digite seu nome de cadastro" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Digite seu email de cadastro" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Senha:</label>
+                    <input type="password" class="form-control" id="pass" name="pass" aria-describedby="emailHelp" placeholder="Digite sua senha de cadastro" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass_confirm">Repita a senha:</label>
+                    <input type="password" class="form-control" id="pass_confirm" name="pass_confirm" aria-describedby="emailHelp" placeholder="Digite novamente sua senha de cadastro" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-edit">Cadastrar-se</button>
+            </form>
+        </div>
+    </div>
+</div>

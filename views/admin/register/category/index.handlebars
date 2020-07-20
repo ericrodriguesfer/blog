@@ -1,0 +1,25 @@
+<div>
+    {{#each errors}}
+        <div class="alert alert-danger" role="alert">
+            {{text}}
+        </div>
+    {{else}}
+
+    {{/each}}
+    <center><h2>Cadastro de novas categorias</h2></center>
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/category/register/new" method="post">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Digite o nome da nova categoria"  required>
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug:</label>
+                    <input type="text" class="form-control" id="slug" name="slug" aria-describedby="emailHelp" placeholder="Digite o slug da nova categoria"  required>
+                </div>
+                <button type="submit" class="btn btn-success btn-edit">Cadastrar categoria</button>
+            </form>
+        </div>
+    </div>
+</div>
