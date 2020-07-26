@@ -38,7 +38,7 @@ O projeto consiste em uma aplicação web produzida totalmente em NodeJS, com ut
 
 ## CASO QUEIRA ENTENDER O FUNCIONAMENTO PRÁTICO DO SISTEMA
 
-[Apresentação não narrada da utilização do sistema](https://youtu.be/LMiptk1J9Wo)
+[Apresentação não narrada da utilização do sistema (ASSISTA EM VELOCIDADE 2x)](https://youtu.be/LMiptk1J9Wo)
 
 ## CASO QUEIRA SABER MAIS SOBRE O PROJETO
 
